@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.STL.stl_admin.dao.login.LoginDao">
+	
+	<select id="admin_loginCheck" resultType="int" parameterType="hashmap">
+		SELECT count(*) FROM STL.stl_member
+		where stl_id=#{userId} and stl_pw=password(#{userPw})
+	</select>
+
+	
+</mapper>
